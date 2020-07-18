@@ -52,7 +52,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         pg.progress = mCurrentPosition
-        tv_progress.text = "$mCurrentPosition" + pg.max
+        tv_progress.text = "$mCurrentPosition" + "/" + pg.max
         tv_questions.text = questions!!.question
         iv_img.setImageResource(questions.image)
         tv_option_one.text = questions.optionOne
@@ -145,7 +145,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                     this, drawableView
                 )
             }
-            3 ->{
+            4 ->{
                 tv_option_four.background = ContextCompat.getDrawable(
                     this, drawableView
                 )

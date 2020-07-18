@@ -15,9 +15,10 @@
     </style>
 
     <style name="judulMain">
-        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:fontFamily">@font/amita</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">35sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">40sp</item>
     </style>
 
     <style name="text">
@@ -27,9 +28,23 @@
     </style>
 
     <style name="text2">
-        <item name="android:fontFamily">serif-monospace</item>
+        <item name="android:fontFamily">sans-serif-thin</item>
         <item name="android:textColor">@color/hint</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="text3">
+        <item name="android:fontFamily">@font/amita</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="text4">
+        <item name="android:fontFamily">@font/amita</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">30sp</item>
     </style>
 
     <style name="inputName">
@@ -42,13 +57,21 @@
         <item name="android:fontFamily">@font/poppins_bold</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">20sp</item>
+        <item name="android:background">#CA3700B3</item>
     </style>
 
-    <style name="margin">
+    <style name="choose">
         <item name="android:layout_marginStart">10dp</item>
-        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginTop">2dp</item>
         <item name="android:layout_marginEnd">10dp</item>
         <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textColorHint">@color/hint</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/bg_choose</item>
+
     </style>
 
 </resources>

@@ -14,7 +14,7 @@ object Constants {
             "dancer",
             "miner",
             "dj",
-            1 )
+            4 )
         questionsList.add(que1)
 
         val que2 = Questions(2, "What professions or jobs does this flag belong to?",
@@ -26,7 +26,7 @@ object Constants {
         questionsList.add(que2)
 
         val que3 = Questions(3, "What professions or jobs does this flag belong to?",
-            R.drawable.hairdresser, "autrounot",
+            R.drawable.astronaut, "astrounot",
             "mechanic",
             "clown",
             "painter",
@@ -82,12 +82,12 @@ object Constants {
         questionsList.add(que9)
 
         val que10 = Questions(10, "What professions or jobs does this flag belong to?",
-            R.drawable.gardener, "showman",
+            R.drawable.taxidriver, "showman",
             "painter",
-            "gardener",
+            "taxidriver",
             "farmer",
             3 )
-        questionsList.add(que6)
+        questionsList.add(que10)
 
         return questionsList
 

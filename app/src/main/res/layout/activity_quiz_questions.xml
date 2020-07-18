@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tv_questions"
             android:layout_margin="10dp"
-            style="@style/text2"
+            style="@style/text3"
             android:text="@string/questions"
             android:gravity="center"/>
 
@@ -28,8 +28,9 @@
             android:id="@+id/iv_img"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/dj"/>
+            android:layout_marginTop="10dp"
+            android:src="@drawable/dj"
+            android:contentDescription="image" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -56,66 +57,46 @@
                 android:padding="16dp"
                 android:gravity="center"
                 android:textColorHint="@color/hint"
-                style="@style/text2"
+                style="@style/text3"
                 tools:text="0/10"/>
 
         </LinearLayout>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tv_option_one"
-            android:padding="16dp"
-            android:gravity="center"
-            android:textColor="@color/hint"
-            android:textColorHint="@color/hint"
-            android:background="@drawable/bg_choose"
+            style="@style/choose"
             tools:text="Singer"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tv_option_two"
-            android:padding="16dp"
-            android:gravity="center"
-            android:textColor="@color/hint"
-            android:textColorHint="@color/hint"
-            android:background="@drawable/bg_choose"
-            style="@style/margin"
+            style="@style/choose"
             tools:text="Miner"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tv_option_three"
-            android:padding="16dp"
-            android:gravity="center"
-            android:textColor="@color/hint"
-            android:textColorHint="@color/hint"
-            android:background="@drawable/bg_choose"
-            style="@style/margin"
+            style="@style/choose"
             tools:text="Miner"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tv_option_four"
-            android:padding="16dp"
-            android:gravity="center"
-            android:textColor="@color/hint"
-            android:textColorHint="@color/hint"
-            android:background="@drawable/bg_choose"
-            style="@style/margin"
+            style="@style/choose"
             tools:text="Miner"/>
 
         <Button
             android:id="@+id/btn_submit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="17dp"
+            android:layout_marginTop="10dp"
             android:text="@string/submit"
-            style="@style/btn_text"
-            android:background="#CA3700B3"/>
+            style="@style/btn_text"/>
 
 
     </LinearLayout>

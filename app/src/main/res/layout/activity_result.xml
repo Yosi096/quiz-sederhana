@@ -16,13 +16,11 @@
         android:id="@+id/tv_result"
         android:layout_marginTop="25dp"
         android:text="Result"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:textStyle="bold"/>
+        style="@style/judulMain"/>
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:id="@+id/iv_trophy"
         android:contentDescription="image"
         android:src="@drawable/trophy"/>
@@ -34,24 +32,20 @@
         android:layout_marginTop="16dp"
         android:textColor="@color/white"
         android:textSize="25sp"
-        android:text="Hey, Congratulations! :)"
-        android:textStyle="bold"/>
+        android:text="Hey, Congratulations! :)" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tv_namee"
-        android:layout_marginTop="25dp"
-        android:textColor="@color/white"
-        android:textSize="22sp"
-        tools:text="Username"
-        android:textStyle="bold"/>
+        android:layout_marginTop="55dp"
+        style="@style/text4"
+        tools:text="Username"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tv_score"
-        android:layout_marginTop="10dp"
         android:textColor="@color/white"
         android:textSize="19sp"
         tools:text="Your Score is 8 out of 10"
@@ -61,11 +55,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btn_finish"
-        android:background="@drawable/btn_bg"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        tools:text="FINISH"
+        android:layout_marginTop="130dp"
+        android:text="FINISH"
+        style="@style/btn_text"
         android:textStyle="bold"/>
 
 </LinearLayout>
