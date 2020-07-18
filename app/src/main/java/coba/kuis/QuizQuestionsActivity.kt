@@ -1,5 +1,6 @@
 package coba.kuis
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
@@ -17,10 +18,14 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     private var mCurrentPosition: Int=1
     private var mQuestionsList: ArrayList<Questions>? =null
     private var mSelectedOptionPosition: Int = 0
+    private var mCorrectAnswers: Int = 0
+    private var mUSerName: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_questions)
+
+        mUSerName = intent.getStringExtra(Constants.USER_NAME)
 
         mQuestionsList = Constants.getQuestions()
 
@@ -96,13 +101,19 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                         mCurrentPosition <= mQuestionsList!!.size -> {
                             setQuestion()
                         }else -> {
-                            Toast.makeText(this, "You have successfully completed the Quiz", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this, ResultActivity::class.java)
+                            intent.putExtra(Constants.USER_NAME, mUSerName)
+                            intent.putExtra(Constants.CORRECT_ANSWER, mCorrectAnswers)
+                            intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionsList!!.size)
+                            startActivity(intent)
                         }
                     }
                 }else{
                     val questions = mQuestionsList?.get(mCurrentPosition-1)
                     if(questions!!.correctAnswer != mSelectedOptionPosition){
                         answerView(mSelectedOptionPosition, R.drawable.wrong)
+                    }else{
+                        mCorrectAnswers++
                     }
                     answerView(questions.correctAnswer, R.drawable.correct)
 
