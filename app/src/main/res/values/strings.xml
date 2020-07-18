@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">kuis</string>
+    <string name="judulMain">QuizApp</string>
+    <string name="welcome">Welcome</string>
+    <string name="questions">What professions or jobs does this flag belong to?</string>
+    <string name="enterName">Please enter your name</string>
+    <string name="submit">Submit</string>
+</resources>
