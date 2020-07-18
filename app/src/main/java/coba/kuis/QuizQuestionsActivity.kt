@@ -8,6 +8,7 @@ import android.service.autofill.OnClickAction
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_quiz_questions.*
 import java.awt.font.TextAttribute
@@ -30,13 +31,20 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         tv_option_three.setOnClickListener(this)
         tv_option_four.setOnClickListener(this)
 
+        btn_submit.setOnClickListener(this)
     }
 
     private  fun setQuestion(){
-        mCurrentPosition = 1
+
         val questions = mQuestionsList!![mCurrentPosition-1]
 
         defaultOptionsView()
+
+        if (mCurrentPosition == mQuestionsList!!.size){
+            btn_submit.text = "FINISH"
+        }else{
+            btn_submit.text = "SUBMIT"
+        }
 
         pg.progress = mCurrentPosition
         tv_progress.text = "$mCurrentPosition" + pg.max
@@ -67,8 +75,71 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
+        when(v?.id) {
+            R.id.tv_option_one -> {
+                selectedOptionView(tv_option_one, 1)
+            }
+            R.id.tv_option_two -> {
+                selectedOptionView(tv_option_two, 2)
+            }
+            R.id.tv_option_three -> {
+                selectedOptionView(tv_option_three, 3)
+            }
+            R.id.tv_option_four -> {
+                selectedOptionView(tv_option_four, 4)
+            }
+            R.id.btn_submit -> {
+                if (mSelectedOptionPosition == 0) {
+                    mCurrentPosition ++
 
-        
+                    when{
+                        mCurrentPosition <= mQuestionsList!!.size -> {
+                            setQuestion()
+                        }else -> {
+                            Toast.makeText(this, "You have successfully completed the Quiz", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }else{
+                    val questions = mQuestionsList?.get(mCurrentPosition-1)
+                    if(questions!!.correctAnswer != mSelectedOptionPosition){
+                        answerView(mSelectedOptionPosition, R.drawable.wrong)
+                    }
+                    answerView(questions.correctAnswer, R.drawable.correct)
+
+                    if (mCurrentPosition == mQuestionsList!!.size){
+                        btn_submit.text = "FINISH"
+                    }else{
+                        btn_submit.text = "GO TO NEXT QUESTION"
+                    }
+                    mSelectedOptionPosition = 0
+                }
+            }
+        }
+    }
+
+    private fun answerView(answer: Int, drawableView:Int){
+        when(answer){
+            1 ->{
+                tv_option_one.background = ContextCompat.getDrawable(
+                    this, drawableView
+                )
+            }
+            2 ->{
+                tv_option_two.background = ContextCompat.getDrawable(
+                    this, drawableView
+                )
+            }
+            3 ->{
+                tv_option_three.background = ContextCompat.getDrawable(
+                    this, drawableView
+                )
+            }
+            3 ->{
+                tv_option_four.background = ContextCompat.getDrawable(
+                    this, drawableView
+                )
+            }
+        }
     }
 
     private fun selectedOptionView (tv: TextView, selectedOptionNum: Int) {
